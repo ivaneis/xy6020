@@ -55,7 +55,7 @@ uint16_t XY6020Library::getCurrent(void)
 }
 
 // Function to set current
-void XY6020Library::set_Current(uint16_t current_ma)
+void XY6020Library::setCurrent(uint16_t current_ma)
 {
   if (current_ma > getMaxCurrent()) {
     current_ma = getMaxCurrent();
@@ -160,7 +160,7 @@ void XY6020Library::sett_ex(uint16_t tex)
 }
 
 // Function to get t_ex
-uint16_t XY6020Library::gettex(void)
+uint16_t XY6020Library::gett_ex(void)
 {
   return t_ex;
 }
@@ -191,7 +191,7 @@ uint16_t XY6020Library::getLock(void)
 void XY6020Library::setLock(uint16_t _lock)
 {
   lock = _lock;
-  set_register(XY6020_WRITE_REGISTER, XY6020_LOCK, _lock);
+  setregister(XY6020_WRITE_REGISTER, XY6020_LOCK, _lock);
 }
 
 // Function to get protect
@@ -204,7 +204,7 @@ uint16_t XY6020Library::getProtect(void)
 void XY6020Library::setProtect(uint16_t _protect)
 {
   protect = _protect;
-  set_register(XY6020_WRITE_REGISTER, XY6020_PROTECT, _protect);
+  setregister(XY6020_WRITE_REGISTER, XY6020_PROTECT, _protect);
 }
 
 // Function to get cvcc
@@ -223,14 +223,14 @@ uint16_t XY6020Library::getOnOff(void)
 void XY6020Library::setOnOff(uint16_t _onoff)
 {
   onoff = _onoff;
-  set_register(XY6020_WRITE_REGISTER, XY6020_ONOFF, _onoff);
+  setregister(XY6020_WRITE_REGISTER, XY6020_ONOFF, _onoff);
 }
 
 // Function to set Low Voltage Protection
 void XY6020Library::setLowVoltageProtection(uint16_t _lpv)
 {
   lvp = _lpv / 10;
-  set_register(XY6020_WRITE_REGISTER, XY6020_S_LVP, lvp);
+  setregister(XY6020_WRITE_REGISTER, XY6020_S_LVP, lvp);
 }
 
 // Function to get Low Voltage Protection
@@ -253,10 +253,10 @@ uint16_t XY6020Library::getOverVoltageProtection(void)
 }
 
 // Function to set Over Current Protection
-void XY6020Library::set_OverCurrentProtection(uint16_t _ocp)
+void XY6020Library::setOverCurrentProtection(uint16_t _ocp)
 {
   ocp = _ocp;
-  set_register(XY6020_WRITE_REGISTER, XY6020_S_OCP, ocp);
+  setregister(XY6020_WRITE_REGISTER, XY6020_S_OCP, ocp);
 }
 
 // Function to get Over Current Protection
@@ -273,7 +273,7 @@ void XY6020Library::setOverPowerProtection(uint16_t _opp)
 }
 
 // Function to get Over Power Protection
-uint16_t XY6020Library::get_OverPowerProtection(void)
+uint16_t XY6020Library::getOverPowerProtection(void)
 {
   return opp;
 }
@@ -282,7 +282,7 @@ uint16_t XY6020Library::get_OverPowerProtection(void)
 void XY6020Library::setMaximumOutputTime_h(uint16_t _ohp_h)
 {
   ohp_h = _ohp_h;
-  set_register(XY6020_WRITE_REGISTER, XY6020_S_OHP_H, ohp_h);
+  setregister(XY6020_WRITE_REGISTER, XY6020_S_OHP_H, ohp_h);
 }
 
 // Function to get Maximum Output Time in hours
@@ -295,7 +295,7 @@ uint16_t XY6020Library::getMaximumOutputTime_h(void)
 void XY6020Library::setMaximumOutputTime_m(uint16_t _ohp_m)
 {
   ohp_m = _ohp_m;
-  set_register(XY6020_WRITE_REGISTER, XY6020_S_OHP_M, ohp_m);
+  setregister(XY6020_WRITE_REGISTER, XY6020_S_OHP_M, ohp_m);
 }
 
 // Function to get Maximum Output Time in minutes
@@ -314,7 +314,7 @@ void XY6020Library::setMaximumOutput_AH(uint32_t _oah)
 }
 
 // Function to get Maximum Output AH
-uint32_t XY6020Library::get_MaximumOutput_AH(void)
+uint32_t XY6020Library::getMaximumOutput_AH(void)
 {
   return oah;
 }
