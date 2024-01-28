@@ -52,9 +52,9 @@ void loop() {
   /* This need to called in order to update the data from the XY6020 device */
   XY6020.updatestats();
 
-  ESP_LOGI("Voltage: ", XY6020.get_vout());
-  ESP_LOGI("Current: ", XY6020.get_Current());
-  ESP_LOGI("Power: ", XY6020.get_Power());
+  ESP_LOGI("Voltage: ", XY6020.getvout());
+  ESP_LOGI("Current: ", XY6020.getCurrent());
+  ESP_LOGI("Power: ", XY6020.getPower());
 
   delay(1000);    /* make sure there is a little delay */
 }
